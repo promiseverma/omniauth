@@ -1,0 +1,41 @@
+<%- model_class = Complaint -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<%= form_for @filterrific do |f| %>
+  <div style="float: left;margin-right: 39px;">
+    Search
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :search_query,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+  <div style="float: left;margin-left: 10px;margin-right: 39px;">
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    key words
+    <%= f.text_field(
+      :with_key_words,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+  <div style="margin-left: 10px;">
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    Tags
+    <%= f.text_field(
+      :with_tag_ids,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+   <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
+<% end %>
+<div id="filterrific_results">
+<%= render(
+  partial: 'complaints/list',
+  locals: { complaints: @complaints }
+) %>
+</div>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_complaint_path,
+            :class => 'btn btn-primary' %>
