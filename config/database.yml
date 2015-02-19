@@ -31,7 +31,7 @@ production:
   encoding: utf8
   pool: 5
   username: root
-  password: 
+  password: root
   socket: /var/run/mysqld/mysqld.sock
   database: omniauth_development
 
