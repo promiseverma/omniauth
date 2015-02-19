@@ -6,9 +6,9 @@ gem 'rails', '4.1.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', group: :development
 # Use postgresql as the database for Active Record
-gem 'pg'
+#gem 'pg'
 gem 'rails_12factor', group: :production
-gem 'puma'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,7 +35,7 @@ gem 'spring',        group: :development
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
